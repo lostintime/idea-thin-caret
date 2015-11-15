@@ -34,6 +34,7 @@
 
 # IntelliJ
 /out/
+/ThinCaret.jar
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
