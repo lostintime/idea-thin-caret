@@ -2,7 +2,7 @@
     <id>com.lostintimedev.java.idea.ThinCaret</id>
     <name>ThinCaret</name>
     <version>1.0</version>
-    <vendor email="support@lostintimedev.com" url="http://lostintimedev.com">lostintimeDev</vendor>
+    <vendor email="support@lostintimedev.com" url="http://lostintimedev.com">LostintimeDev</vendor>
 
     <description><![CDATA[
       Makes your editor caret 1 pixel thin (for retina users).<br/>
@@ -39,10 +39,4 @@
     <project-components>
         <!-- Add your project components here -->
     </project-components>
-    <!--<actions>-->
-        <!--<action id="com.lostintimedev.java.idea.ToggleCaret" class="com.lostintimedev.java.idea.ThinCaretToggle"-->
-                <!--text="Thin Caret">-->
-            <!--<add-to-group group-id="EditMenu" anchor="first"/>-->
-        <!--</action>-->
-    <!--</actions>-->
 </idea-plugin>

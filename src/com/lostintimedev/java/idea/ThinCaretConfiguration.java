@@ -1,15 +1,19 @@
 package com.lostintimedev.java.idea;
 
 
-import com.intellij.openapi.util.JDOMExternalizable;
-import com.intellij.openapi.util.WriteExternalException;
-import com.intellij.openapi.util.InvalidDataException;
-import com.intellij.openapi.util.DefaultJDOMExternalizer;
-import com.intellij.openapi.components.ApplicationComponent;
-import org.jdom.Element;
+import com.intellij.openapi.components.*;
+import com.intellij.util.xmlb.XmlSerializerUtil;
+import com.intellij.util.xmlb.annotations.Property;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class ThinCaretConfiguration implements ApplicationComponent, JDOMExternalizable {
+@State(
+        name = "thinCaretConfiguration",
+        storages = {
+                @Storage(id = "other", file = StoragePathMacros.APP_CONFIG + "/thinCaret.xml")
+        }
+)
+public class ThinCaretConfiguration implements ApplicationComponent, PersistentStateComponent<ThinCaretConfiguration> {
 
     @NotNull
     public String getComponentName() {
@@ -22,12 +26,15 @@ public class ThinCaretConfiguration implements ApplicationComponent, JDOMExterna
     public void disposeComponent() {
     }
 
-    public void writeExternal(Element element) throws WriteExternalException {
-        DefaultJDOMExternalizer.writeExternal(this, element);
+    @Nullable
+    @Override
+    public ThinCaretConfiguration getState() {
+        return this;
     }
 
-    public void readExternal(Element element) throws InvalidDataException {
-        DefaultJDOMExternalizer.readExternal(this, element);
+    @Override
+    public void loadState(ThinCaretConfiguration thinCaretConfiguration) {
+        XmlSerializerUtil.copyBean(thinCaretConfiguration, this);
     }
 
     public boolean equals(final Object bj) {
@@ -40,13 +47,10 @@ public class ThinCaretConfiguration implements ApplicationComponent, JDOMExterna
 
         final ThinCaretConfiguration thinCaretConfiguration = (ThinCaretConfiguration) bj;
 
-        if (enabled != thinCaretConfiguration.enabled) {
-            return false;
-        }
-
-        return true;
+        return enabled == thinCaretConfiguration.enabled;
     }
 
+    @Property
     public boolean enabled;
 }
 

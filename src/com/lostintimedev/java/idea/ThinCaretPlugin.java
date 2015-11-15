@@ -77,13 +77,6 @@ public class ThinCaretPlugin implements ApplicationComponent, Configurable {
         }
     }
 
-    public void toggleCaretWidth() {
-        if (theConfiguration != null) {
-            theConfiguration.enabled = !theConfiguration.enabled;
-            applyNewCaretWidth();
-        }
-    }
-
     @Override
     public void reset() {
         if (userInterface != null && theConfiguration != null) {
