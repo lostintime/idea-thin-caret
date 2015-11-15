@@ -1,0 +1,48 @@
+<idea-plugin version="2">
+    <id>com.lostintimedev.java.idea.ThinCaret</id>
+    <name>ThinCaret</name>
+    <version>1.0</version>
+    <vendor email="support@lostintimedev.com" url="http://lostintimedev.com">lostintimeDev</vendor>
+
+    <description><![CDATA[
+      Makes your editor caret 1 pixel thin (for retina users).<br/>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Nothing changed yet.<br>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products -->
+    <depends>com.intellij.modules.lang</depends>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <application-components>
+        <!-- Add your application components here -->
+        <component>
+            <implementation-class>com.lostintimedev.java.idea.ThinCaretConfiguration</implementation-class>
+        </component>
+        <component>
+            <implementation-class>com.lostintimedev.java.idea.ThinCaretPlugin</implementation-class>
+        </component>
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+    <!--<actions>-->
+        <!--<action id="com.lostintimedev.java.idea.ToggleCaret" class="com.lostintimedev.java.idea.ThinCaretToggle"-->
+                <!--text="Thin Caret">-->
+            <!--<add-to-group group-id="EditMenu" anchor="first"/>-->
+        <!--</action>-->
+    <!--</actions>-->
+</idea-plugin>
