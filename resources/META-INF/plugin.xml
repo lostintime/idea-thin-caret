@@ -1,7 +1,7 @@
 <idea-plugin version="2">
     <id>com.lostintimedev.java.idea.ThinCaret</id>
     <name>ThinCaret</name>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <vendor email="support@lostintimedev.com" url="http://lostintimedev.com">LostintimeDev</vendor>
 
     <description><![CDATA[
@@ -9,7 +9,7 @@
     ]]></description>
 
     <change-notes><![CDATA[
-      Nothing changed yet.<br>
+      1.0.1 Fixed configuration pane for idea16.<br>
     ]]>
     </change-notes>
 
