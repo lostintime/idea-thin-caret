@@ -10,7 +10,10 @@ import org.jetbrains.annotations.Nullable;
 @State(
         name = "thinCaretConfiguration",
         storages = {
-                @Storage(id = "other", file = StoragePathMacros.APP_CONFIG + "/thinCaret.xml")
+                @Storage(
+                        id = "thinCaret",
+                        file = "$APP_CONFIG$/thinCaret-settings.xml"
+                )
         }
 )
 public class ThinCaretConfiguration implements ApplicationComponent, PersistentStateComponent<ThinCaretConfiguration> {
